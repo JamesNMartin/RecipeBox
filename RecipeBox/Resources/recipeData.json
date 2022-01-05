@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Baked Feta Pasta",
+        "id": 1001,
+        "isFavorite": true,
+        "difficulty": "Low",
+        "dateMade": "Jan 1, 2022",
+        "cookTime": "45 minutes",
+        "isVegan": true,
+        "description": "You don't need to change the oven temperature. The OG recipe calls for baking the feta with the tomatoes at 400° for 30 minutes then kicking up for the last 10 minutes. After 30 minutes in the oven, I found my feta well on its way to a pretty shade of golden on top. To avoid burning additions like garlic and herbs (see my next note), I think it's best to keep the temperature steady. You can play add more than just tomatoes and feta. Quartered shallots will get nice and jammy, and smashed garlic will infuse the olive oil. Like spice? Throw in a ton of crushed red pepper flakes. Got thyme? Add a couple sprigs for an earthy touch. Adding pasta water helps. A scoop of pasta water will help stretch your sauce to coat your pasta more smoothly and generously.",
+        "url": "https://www.delish.com/cooking/recipe-ideas/a35421563/baked-feta-pasta-tiktok/",
+        "imageName": "fetapasta"
+    },
+    {
+        "name": "Fasolada (Greek White Bean Soup)",
+        "id": 1002,
+        "isFavorite": false,
+        "difficulty": "Medium",
+        "dateMade": "Dec 12, 2021",
+        "cookTime": "60 minutes",
+        "isVegan": true,
+        "description": "Fun fact: It has an ancient and mythical existence. Fasolada was the soup of the Greek gods! The myth is that at the annual festival honoring Apollo, this soup was served to the festival attendees and to Apollo himself. The Greek gods vanished over time, but Fasolada lives on…",
+        "url":"https://gypsyplate.com/fasolada/",
+        "imageName": "whitebeansoup"
+    },
+    {
+        "name": "Grilled Chicken Cobb Salad with Honey Dijon",
+        "id": 1003,
+        "isFavorite": false,
+        "difficulty": "Low",
+        "dateMade": "Nov 10, 2021",
+        "cookTime": "25 minutes",
+        "isVegan": false,
+        "description": "I like to cook larger amounts of bacon in the oven to save time (and my clothing!) Preheat your oven to 400°F and line a large baking sheet with parchment paper. Place the bacon on the parchment and bake for about 20 minutes or until desired doneness is attained. Drain on paper towels before chopping or crumbling. My egg boiling method: place eggs in a large saucepan and cover with cold water about an inch above the eggs. Bring to a rolling boil, then turn off the heat and cover the pan. Let the eggs steam this way for 10 minutes, then run under cold water. Peel and slice as usual.",
+        "url":"https://www.paleorunningmomma.com/grilled-chicken-cobb-salad-with-honey-dijon-paleo/",
+        "imageName": "cobbsalad"
+    },
+    {
+        "name": "Rainbow Pasta Salad",
+        "id": 1004,
+        "isFavorite": false,
+        "difficulty": "Medium",
+        "dateMade": "Sep 10, 2021",
+        "cookTime": "30 minutes",
+        "isVegan": false,
+        "description": "",
+        "url":"https://gypsyplate.com/rainbow-pasta-salad/",
+        "imageName": "rainbowsalad"
+    }
+]
