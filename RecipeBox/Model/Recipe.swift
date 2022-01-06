@@ -14,7 +14,6 @@ struct Recipe: Hashable, Codable, Identifiable {
     var description: String
     var isFavorite: Bool
     var difficulty: String
-    // 2022-01-01 23:38:28 +0000
     var dateMade: String
     var cookTime: String
     var isVegan: Bool
