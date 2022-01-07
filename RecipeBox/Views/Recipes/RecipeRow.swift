@@ -51,7 +51,7 @@ struct LabelStyle: ViewModifier {
 }
 
 struct LandmarkRow_Previews: PreviewProvider {
-    static var recipes = ModelData().recipes
+    static var recipes = RecipeViewModel().recipes
     
     static var previews: some View {
         Group {

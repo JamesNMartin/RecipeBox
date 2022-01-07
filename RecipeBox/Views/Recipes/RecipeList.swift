@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecipeList: View {
-    @EnvironmentObject var modelData: ModelData
+    @EnvironmentObject var modelData: RecipeViewModel
     @State private var showFavoritesOnly = false
     @State private var showingSheet = false
     @State private var queryString: String = ""
@@ -32,6 +32,8 @@ struct RecipeList: View {
                         RecipeDetail(recipe: recipe)
                     } label: {
                         RecipeRow(recipe: recipe)
+                            .listRowSeparatorTint(Color.init(UIColor(red: 0.79, green: 0.77, blue: 0.81, alpha: 1.00)))
+                        
                     }
                 }
             }
@@ -65,7 +67,7 @@ struct RecipeList: View {
                     })
                 }
             }
-            //.listStyle(.plain)
+            .listStyle(.plain)
             .navigationBarItems(trailing: Button(action: {
                 //showingSheet.toggle()
                 showingSheet = true
@@ -89,7 +91,7 @@ struct RecipeList_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["iPhone SE (2nd generation)", "iPhone 12 Pro Max"], id: \.self) { deviceName in
             RecipeList()
-                .environmentObject(ModelData())
+                .environmentObject(RecipeObject())
                 .previewDevice(PreviewDevice(rawValue: deviceName))
                 .previewDisplayName(deviceName)
         }

@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct LandmarksApp: App {
-    @StateObject private var modelData = ModelData()
+    @StateObject private var modelData = RecipeViewModel()
 
     var body: some Scene {
         WindowGroup {

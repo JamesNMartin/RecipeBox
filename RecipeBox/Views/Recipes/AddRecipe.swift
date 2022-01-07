@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Foundation
+import Combine
 
 struct AddRecipe: View {
     @State private var name: String = ""
@@ -17,11 +18,13 @@ struct AddRecipe: View {
     @State private var minute: String = ""
     @State private var isVegan: Bool = false
     @State private var date = Date()
-    @State private var selection = 1
+    @State private var difficulty: String = "Low"
     @State private var showingDetail = false
     @State private var allowSaving = false
+    @State private var selectedMinutes = "0 Minutes"
+    private var minutes = ["0 Minutes", "15 Minutes", "30 Minutes", "45 Minutes"]
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var jsonData: ModelData
+    @EnvironmentObject var realmData: RecipeViewModel
     
     var body: some View {
         NavigationView {
@@ -45,8 +48,8 @@ struct AddRecipe: View {
                         Text("Hours")
                         Spacer()
                         Picker(selection: $hour, label: Text("Hours")) {
-                            ForEach(0 ..< 13) {
-                                Text("\($0) Hours")
+                            ForEach((0 ..< 13).map(String.init), id:\.self) { i in
+                                Text("\(i) Hours")
                             }
                         }
                         .pickerStyle(.menu)
@@ -55,10 +58,9 @@ struct AddRecipe: View {
                         Text("Minutes")
                         Spacer()
                         Picker(selection: $minute, label: Text("Minutes")) {
-                            Text("0 Minutes").tag(1)
-                            Text("15 Minutes").tag(2)
-                            Text("30 Minutes").tag(3)
-                            Text("45 Minutes").tag(4)
+                            ForEach(minutes, id: \.self, content: { minute in
+                                Text(minute)
+                            })
                         }
                         .pickerStyle(.menu)
                     }
@@ -69,10 +71,11 @@ struct AddRecipe: View {
                     }
                     .tint(Color.accentColor)
                 }
-                Picker(selection: $selection, label: Text("Recipe Difficulty")) {
-                    Text("Low").tag(1)
-                    Text("Medium").tag(2)
-                    Text("Hard").tag(3)
+                Picker(selection: $difficulty, label: Text("Recipe Difficulty")) {
+                    let levels = ["Low", "Medium", "High"]
+                    ForEach(levels, id: \.self, content: { level in
+                        Text(level)
+                    })
                 }
                 .pickerStyle(.inline)
                 Section(header: Text("Date Made")) {
@@ -91,6 +94,7 @@ struct AddRecipe: View {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Button(action: {
                         //Dismiss view
+                        presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Text("Dismiss")
                             .fontWeight(.bold)
@@ -99,7 +103,7 @@ struct AddRecipe: View {
                 }
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button(action: {
-                        
+                        handleSubmit()
                     }, label: {
                         Text("Save")
                         //Image(systemName: "line.3.horizontal.decrease.circle")
@@ -107,6 +111,10 @@ struct AddRecipe: View {
                 }
             }
         }
+    }
+    private func handleSubmit() {
+        realmData.addRecipe(name: $name.wrappedValue, notes: $descriptionText.wrappedValue, isFavorite: false, difficulty: $difficulty.wrappedValue, dateMade: date, cookTime: "\($hour.wrappedValue) Hours \($minute.wrappedValue)", isVegan: isVegan, url: $url.wrappedValue, imageName: "poundcake")
+        presentationMode.wrappedValue.dismiss()
     }
 }
 

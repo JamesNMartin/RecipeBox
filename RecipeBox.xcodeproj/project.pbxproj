@@ -11,6 +11,10 @@
 		AC2619EE277FFBA200EB1954 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2619ED277FFBA200EB1954 /* FavoriteButton.swift */; };
 		AC2619F2277FFE1800EB1954 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2619F1277FFE1800EB1954 /* RecipeList.swift */; };
 		AC480444278029E100D667AD /* AddRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC480443278029E100D667AD /* AddRecipe.swift */; };
+		AC805FC52787E46500CA1174 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AC805FC42787E46500CA1174 /* Realm */; };
+		AC805FC72787E46500CA1174 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AC805FC62787E46500CA1174 /* RealmSwift */; };
+		AC805FC92788D1BD00CA1174 /* RecipeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FC82788D1BD00CA1174 /* RecipeObject.swift */; };
+		AC805FCB2788DACA00CA1174 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FCA2788DACA00CA1174 /* RecipeViewModel.swift */; };
 		ACB9C874277F7CB500097903 /* RecipeBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C873277F7CB500097903 /* RecipeBoxApp.swift */; };
 		ACB9C876277F7CB500097903 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C875277F7CB500097903 /* ContentView.swift */; };
 		ACB9C878277F7CB600097903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB9C877277F7CB600097903 /* Assets.xcassets */; };
@@ -46,6 +50,8 @@
 		AC2619ED277FFBA200EB1954 /* FavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		AC2619F1277FFE1800EB1954 /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
 		AC480443278029E100D667AD /* AddRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipe.swift; sourceTree = "<group>"; };
+		AC805FC82788D1BD00CA1174 /* RecipeObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeObject.swift; sourceTree = "<group>"; };
+		AC805FCA2788DACA00CA1174 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		ACB9C870277F7CB500097903 /* RecipeBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB9C873277F7CB500097903 /* RecipeBoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBoxApp.swift; sourceTree = "<group>"; };
 		ACB9C875277F7CB500097903 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC805FC72787E46500CA1174 /* RealmSwift in Frameworks */,
+				AC805FC52787E46500CA1174 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +158,8 @@
 			children = (
 				ACB9C89E277F7DDF00097903 /* Recipe.swift */,
 				ACB9C8AC277FEAB400097903 /* ModelData.swift */,
+				AC805FC82788D1BD00CA1174 /* RecipeObject.swift */,
+				AC805FCA2788DACA00CA1174 /* RecipeViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +217,10 @@
 			dependencies = (
 			);
 			name = RecipeBox;
+			packageProductDependencies = (
+				AC805FC42787E46500CA1174 /* Realm */,
+				AC805FC62787E46500CA1174 /* RealmSwift */,
+			);
 			productName = RecipeBox;
 			productReference = ACB9C870277F7CB500097903 /* RecipeBox.app */;
 			productType = "com.apple.product-type.application";
@@ -279,6 +293,9 @@
 				Base,
 			);
 			mainGroup = ACB9C867277F7CB500097903;
+			packageReferences = (
+				AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = ACB9C871277F7CB500097903 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -329,7 +346,9 @@
 				AC2619EE277FFBA200EB1954 /* FavoriteButton.swift in Sources */,
 				ACB9C874277F7CB500097903 /* RecipeBoxApp.swift in Sources */,
 				ACB9C8A6277FDBB100097903 /* RecipeRow.swift in Sources */,
+				AC805FCB2788DACA00CA1174 /* RecipeViewModel.swift in Sources */,
 				ACB9C8AD277FEAB400097903 /* ModelData.swift in Sources */,
+				AC805FC92788D1BD00CA1174 /* RecipeObject.swift in Sources */,
 				AC2619F2277FFE1800EB1954 /* RecipeList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,6 +676,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC805FC42787E46500CA1174 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		AC805FC62787E46500CA1174 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACB9C868277F7CB500097903 /* Project object */;
 }
