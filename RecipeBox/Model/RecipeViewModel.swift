@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 import RealmSwift
+import UIKit
+import SwiftUI
 
 final class RecipeViewModel: ObservableObject {
     @Published var recipes: [Recipe] = []
@@ -34,7 +36,8 @@ final class RecipeViewModel: ObservableObject {
             print(error.localizedDescription)
         }
     }
-    func addRecipe (name: String, notes: String, isFavorite: Bool, difficulty: String, dateMade: Date, cookTime: String, isVegan: Bool, url: String, imageName: String) {
+    func addRecipe (name: String, notes: String, isFavorite: Bool, difficulty: String, dateMade: Date, cookTime: String, isVegan: Bool, url: String, image: Data) {
+        
         let recipeObject = RecipeObject(value: [
             "name": name,
             "notes": notes,
@@ -44,7 +47,8 @@ final class RecipeViewModel: ObservableObject {
             "cookTime": cookTime,
             "isVegan": isVegan,
             "url": url,
-            "imageName": imageName
+            //"imageName": imageName
+            "image": image
         ])
         do {
             let realm = try Realm()

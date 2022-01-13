@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// HEX to UIColor: https://www.uicolor.io
+
 struct RecipeList: View {
     @EnvironmentObject var modelData: RecipeViewModel
     @State private var showFavoritesOnly = false

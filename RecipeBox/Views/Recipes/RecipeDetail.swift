@@ -8,6 +8,8 @@
 import SwiftUI
 import SafariServices
 import CoreMotion
+import RealmSwift
+import Nuke
 
 struct RecipeDetail: View {
     @EnvironmentObject var modelData: RecipeViewModel
@@ -21,23 +23,19 @@ struct RecipeDetail: View {
         modelData.recipes.firstIndex(where: { $0.id == recipe.id})!
     }
     
+    var dataToImage: Image {
+        Image(uiImage: UIImage(data: recipe.image as Data)!)
+    }
+    
     var body: some View {
-        ScrollView {
-            recipe.image
-                .resizable()
-                .ignoresSafeArea(edges: .top)
-                .frame(width: UIScreen.main.bounds.width - 24, height: UIScreen.main.bounds.width - 16, alignment: .center)
-                .aspectRatio(contentMode: .fit)
-                .clipped()
-                .cornerRadius(10)
-                .background(Color.clear)
-                //.shadow(color: Color.gray, radius: 4, x: 0, y: 0)
+        ScrollView(.vertical) {
+            RecipeImage(image: dataToImage)
                 .modifier(ParallaxMotionModifier(manager: manager, magnitude: 10))
             VStack(alignment: .leading) {
                 HStack {
                     Text(recipe.name)
                         .font(.title)
-                        //.foregroundColor(Color.init(UIColor(red: 0.14, green: 0.13, blue: 0.22, alpha: 1.00)))
+                    //.foregroundColor(Color.init(UIColor(red: 0.14, green: 0.13, blue: 0.22, alpha: 1.00)))
                     if recipe.isVegan {
                         Image(systemName: "leaf.fill")
                             .foregroundColor(.green)
@@ -47,20 +45,22 @@ struct RecipeDetail: View {
                             .hidden()
                     }
                     FavoriteButton(isSet: $modelData.recipes[recipeIndex].isFavorite)
-                    
+                        .onChange(of: modelData.recipes[recipeIndex].isFavorite) { newValue in
+                            updateFavorite()
+                        }
                 }
                 
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Cook time: \(recipe.cookTime)")
                             .font(.headline)
-                            //.foregroundColor(Color.init(UIColor(red: 0.45, green: 0.35, blue: 0.76, alpha: 1.00)))
+                        //.foregroundColor(Color.init(UIColor(red: 0.45, green: 0.35, blue: 0.76, alpha: 1.00)))
                         Text("Difficulty: \(recipe.difficulty)")
                             .font(.headline)
-                            //.foregroundColor(Color.init(UIColor(red: 0.55, green: 0.53, blue: 0.79, alpha: 1.00)))
+                        //.foregroundColor(Color.init(UIColor(red: 0.55, green: 0.53, blue: 0.79, alpha: 1.00)))
                         Text("Date last made: \(recipe.dateMade.formatted(date: .long, time: .omitted))")
                             .font(.headline)
-                            //.foregroundColor(Color.init(UIColor(red: 0.79, green: 0.77, blue: 0.81, alpha: 1.00)))
+                        //.foregroundColor(Color.init(UIColor(red: 0.79, green: 0.77, blue: 0.81, alpha: 1.00)))
                         //Divider()
                         
                     }
@@ -82,7 +82,7 @@ struct RecipeDetail: View {
                     .font(.title2)
                 //.padding(.bottom)
                 Text(recipe.notes)
-                    //.font(.headline)
+                //.font(.headline)
                     .fontWeight(.regular)
             }
             .padding()
@@ -90,7 +90,18 @@ struct RecipeDetail: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(recipe.name)
     }
-}
+    func updateFavorite() {
+        do {
+            let realm = try Realm()
+            let objectId = try ObjectId(string: recipe.id)
+            let recipe = realm.object(ofType: RecipeObject.self, forPrimaryKey: objectId)
+            try realm.write {
+                recipe?.isFavorite = modelData.recipes[recipeIndex].isFavorite
+            }
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }}
 struct ParallaxMotionModifier: ViewModifier {
     
     @ObservedObject var manager: MotionManager

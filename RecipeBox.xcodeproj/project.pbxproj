@@ -15,6 +15,10 @@
 		AC805FC72787E46500CA1174 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AC805FC62787E46500CA1174 /* RealmSwift */; };
 		AC805FC92788D1BD00CA1174 /* RecipeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FC82788D1BD00CA1174 /* RecipeObject.swift */; };
 		AC805FCB2788DACA00CA1174 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FCA2788DACA00CA1174 /* RecipeViewModel.swift */; };
+		AC805FCD2788F92800CA1174 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FCC2788F92800CA1174 /* ImagePickerView.swift */; };
+		AC805FCF278B9BFF00CA1174 /* ImageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FCE278B9BFF00CA1174 /* ImageCompressor.swift */; };
+		AC805FD1278BB73F00CA1174 /* RecipeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FD0278BB73F00CA1174 /* RecipeImage.swift */; };
+		AC805FD6278FDD6000CA1174 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = AC805FD5278FDD6000CA1174 /* Nuke */; };
 		ACB9C874277F7CB500097903 /* RecipeBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C873277F7CB500097903 /* RecipeBoxApp.swift */; };
 		ACB9C876277F7CB500097903 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C875277F7CB500097903 /* ContentView.swift */; };
 		ACB9C878277F7CB600097903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB9C877277F7CB600097903 /* Assets.xcassets */; };
@@ -24,8 +28,6 @@
 		ACB9C891277F7CB600097903 /* RecipeBoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C890277F7CB600097903 /* RecipeBoxUITestsLaunchTests.swift */; };
 		ACB9C89F277F7DDF00097903 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C89E277F7DDF00097903 /* Recipe.swift */; };
 		ACB9C8A6277FDBB100097903 /* RecipeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C8A5277FDBB100097903 /* RecipeRow.swift */; };
-		ACB9C8A9277FE8A200097903 /* recipeData.json in Resources */ = {isa = PBXBuildFile; fileRef = ACB9C8A8277FE8A200097903 /* recipeData.json */; };
-		ACB9C8AD277FEAB400097903 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C8AC277FEAB400097903 /* ModelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,9 @@
 		AC480443278029E100D667AD /* AddRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipe.swift; sourceTree = "<group>"; };
 		AC805FC82788D1BD00CA1174 /* RecipeObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeObject.swift; sourceTree = "<group>"; };
 		AC805FCA2788DACA00CA1174 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		AC805FCC2788F92800CA1174 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		AC805FCE278B9BFF00CA1174 /* ImageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCompressor.swift; sourceTree = SOURCE_ROOT; };
+		AC805FD0278BB73F00CA1174 /* RecipeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeImage.swift; sourceTree = "<group>"; };
 		ACB9C870277F7CB500097903 /* RecipeBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB9C873277F7CB500097903 /* RecipeBoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBoxApp.swift; sourceTree = "<group>"; };
 		ACB9C875277F7CB500097903 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,8 +69,6 @@
 		ACB9C890277F7CB600097903 /* RecipeBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ACB9C89E277F7DDF00097903 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		ACB9C8A5277FDBB100097903 /* RecipeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRow.swift; sourceTree = "<group>"; };
-		ACB9C8A8277FE8A200097903 /* recipeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipeData.json; sourceTree = "<group>"; };
-		ACB9C8AC277FEAB400097903 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC805FD6278FDD6000CA1174 /* Nuke in Frameworks */,
 				AC805FC72787E46500CA1174 /* RealmSwift in Frameworks */,
 				AC805FC52787E46500CA1174 /* Realm in Frameworks */,
 			);
@@ -157,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				ACB9C89E277F7DDF00097903 /* Recipe.swift */,
-				ACB9C8AC277FEAB400097903 /* ModelData.swift */,
 				AC805FC82788D1BD00CA1174 /* RecipeObject.swift */,
 				AC805FCA2788DACA00CA1174 /* RecipeViewModel.swift */,
 			);
@@ -168,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB9C875277F7CB500097903 /* ContentView.swift */,
+				AC805FCC2788F92800CA1174 /* ImagePickerView.swift */,
 				ACB9C8A4277FDB9700097903 /* Recipes */,
 				ACB9C8A3277FD90600097903 /* Helpers */,
 			);
@@ -177,6 +181,8 @@
 		ACB9C8A3277FD90600097903 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AC805FD0278BB73F00CA1174 /* RecipeImage.swift */,
+				AC805FCE278B9BFF00CA1174 /* ImageCompressor.swift */,
 				AC2619ED277FFBA200EB1954 /* FavoriteButton.swift */,
 			);
 			path = Helpers;
@@ -196,7 +202,6 @@
 		ACB9C8A7277FE1DB00097903 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				ACB9C8A8277FE8A200097903 /* recipeData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			packageProductDependencies = (
 				AC805FC42787E46500CA1174 /* Realm */,
 				AC805FC62787E46500CA1174 /* RealmSwift */,
+				AC805FD5278FDD6000CA1174 /* Nuke */,
 			);
 			productName = RecipeBox;
 			productReference = ACB9C870277F7CB500097903 /* RecipeBox.app */;
@@ -295,6 +301,7 @@
 			mainGroup = ACB9C867277F7CB500097903;
 			packageReferences = (
 				AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				AC805FD4278FDD5F00CA1174 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = ACB9C871277F7CB500097903 /* Products */;
 			projectDirPath = "";
@@ -312,7 +319,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACB9C8A9277FE8A200097903 /* recipeData.json in Resources */,
 				ACB9C87B277F7CB600097903 /* Preview Assets.xcassets in Resources */,
 				ACB9C878277F7CB600097903 /* Assets.xcassets in Resources */,
 			);
@@ -339,15 +345,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC805FCF278B9BFF00CA1174 /* ImageCompressor.swift in Sources */,
+				AC805FD1278BB73F00CA1174 /* RecipeImage.swift in Sources */,
 				AC480444278029E100D667AD /* AddRecipe.swift in Sources */,
 				ACB9C89F277F7DDF00097903 /* Recipe.swift in Sources */,
 				AC2619EC277FF42C00EB1954 /* RecipeDetail.swift in Sources */,
+				AC805FCD2788F92800CA1174 /* ImagePickerView.swift in Sources */,
 				ACB9C876277F7CB500097903 /* ContentView.swift in Sources */,
 				AC2619EE277FFBA200EB1954 /* FavoriteButton.swift in Sources */,
 				ACB9C874277F7CB500097903 /* RecipeBoxApp.swift in Sources */,
 				ACB9C8A6277FDBB100097903 /* RecipeRow.swift in Sources */,
 				AC805FCB2788DACA00CA1174 /* RecipeViewModel.swift in Sources */,
-				ACB9C8AD277FEAB400097903 /* ModelData.swift in Sources */,
 				AC805FC92788D1BD00CA1174 /* RecipeObject.swift in Sources */,
 				AC2619F2277FFE1800EB1954 /* RecipeList.swift in Sources */,
 			);
@@ -513,6 +521,7 @@
 				DEVELOPMENT_TEAM = 9XZ4F4T9QB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to the camera for attaching image to recipes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -542,6 +551,7 @@
 				DEVELOPMENT_TEAM = 9XZ4F4T9QB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to the camera for attaching image to recipes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -686,6 +696,14 @@
 				minimumVersion = 10.19.0;
 			};
 		};
+		AC805FD4278FDD5F00CA1174 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -698,6 +716,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		AC805FD5278FDD6000CA1174 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC805FD4278FDD5F00CA1174 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

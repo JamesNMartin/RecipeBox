@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import UIKit
 import Foundation
 import Combine
+import AssetsLibrary
 
 struct AddRecipe: View {
     @State private var name: String = ""
@@ -15,6 +17,7 @@ struct AddRecipe: View {
     @State private var descriptionText: String = ""
     @State private var url: String = ""
     @State private var hour: String = ""
+    @State private var pMode: String = ""
     @State private var minute: String = ""
     @State private var isVegan: Bool = false
     @State private var date = Date()
@@ -26,19 +29,44 @@ struct AddRecipe: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var realmData: RecipeViewModel
     
+    @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    @State private var selectedImage: UIImage?
+    @State private var isImagePickerDisplay = false
+    
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Recipe Name and image")) {
+                Section(header: Text("Recipe Name")) {
+                    TextField("Name", text: $name)
+                }
+                Section(header: Text("Recipe Image")) {
                     HStack {
-                        TextField("Name", text: $name)
+                        
+                        if selectedImage != nil {
+                            Image(uiImage: selectedImage!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(10)
+                            //.clipShape(Circle())
+                                .frame(width: 75, height: 75)
+                        } else {
+                            Image(systemName: "square.dashed")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundColor(Color.accentColor)
+                                .cornerRadius(10)
+                                .opacity(0.3)
+                            //.clipShape(Circle())
+                                .frame(width: 75, height: 75)
+                        }
                         Spacer()
-                        Button(action: {
+                        Button("\(Image(systemName: "camera.fill"))") {
+                            self.sourceType = .photoLibrary
+                            self.isImagePickerDisplay.toggle()
                             
-                        }, label: {
-                            Image(systemName: "photo.on.rectangle.angled")
-                                .font(.system(size: 20))
-                        })
+                        }
+                        .pickerStyle(.menu)
+                        .font(.system(size: 24))
                     }
                 }
                 //TextField("Name", text: $name)
@@ -89,14 +117,18 @@ struct AddRecipe: View {
                 }
             }
             .navigationTitle("Add Meal")
+            .sheet(isPresented: self.$isImagePickerDisplay) {
+                ImagePickerView(selectedImage: self.$selectedImage, sourceType: self.sourceType)
+            }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Button(action: {
                         //Dismiss view
+                        
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Text("Dismiss")
+                        Text("Cancel")
                             .fontWeight(.bold)
                         //Image(systemName: "line.3.horizontal.decrease.circle")
                     })
@@ -113,7 +145,14 @@ struct AddRecipe: View {
         }
     }
     private func handleSubmit() {
-        realmData.addRecipe(name: $name.wrappedValue, notes: $descriptionText.wrappedValue, isFavorite: false, difficulty: $difficulty.wrappedValue, dateMade: date, cookTime: "\($hour.wrappedValue) Hours \($minute.wrappedValue)", isVegan: isVegan, url: $url.wrappedValue, imageName: "poundcake")
+        //guard let image = selectedImage else { return }
+        // Found here: https://www.codegrepper.com/code-examples/swift/uiimage+to+data+swift
+        // More: https://stackoverflow.com/questions/32297704/convert-uiimage-to-nsdata-and-convert-back-to-uiimage-in-swift
+        guard let imageData = selectedImage?.jpegData(compressionQuality: 0.0) else { return }
+        //let jpegData = imageData.jpegData(compressionQuality: 0.0)
+        
+        
+        realmData.addRecipe(name: $name.wrappedValue, notes: $descriptionText.wrappedValue, isFavorite: false, difficulty: $difficulty.wrappedValue, dateMade: date, cookTime: "\($hour.wrappedValue) Hours \($minute.wrappedValue)", isVegan: isVegan, url: $url.wrappedValue, image: imageData)
         presentationMode.wrappedValue.dismiss()
     }
 }

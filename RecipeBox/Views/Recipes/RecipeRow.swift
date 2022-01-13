@@ -12,10 +12,12 @@ struct RecipeRow: View {
     
     var body: some View {
         HStack {
-            recipe.image
+            Image(uiImage: UIImage(data: recipe.image as Data)!)
                 .resizable()
                 .frame(width: 50, height: 50)
-                .clipShape(Circle())
+                //.clipShape(Circle())
+                .cornerRadius(10)
+                .aspectRatio(contentMode: .fill)
             VStack(alignment: .leading ,spacing: 0) {
                 Text(recipe.name)
                 Text(recipe.cookTime)
@@ -57,7 +59,7 @@ struct LandmarkRow_Previews: PreviewProvider {
         Group {
             RecipeRow(recipe: recipes[0])
             
-            RecipeRow(recipe: recipes[3])
+            //RecipeRow(recipe: recipes[3])
         }
         .previewLayout(.fixed(width: 400, height: 70))
     }

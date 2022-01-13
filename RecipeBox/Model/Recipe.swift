@@ -18,9 +18,10 @@ struct Recipe: Identifiable {
     var cookTime: String
     var isVegan: Bool
     var url: String
+    //var imageName: String
+    var image: Data
     
-    private let imageName: String
-    var image: Image { Image(imageName) }
+    
     
     init(RecipeObject: RecipeObject) {
         self.id = RecipeObject.id.stringValue
@@ -32,6 +33,7 @@ struct Recipe: Identifiable {
         self.cookTime = RecipeObject.cookTime
         self.isVegan = RecipeObject.isVegan
         self.url = RecipeObject.url
-        self.imageName = RecipeObject.imageName
+        //self.imageName = RecipeObject.imageName
+        self.image = RecipeObject.image
     }
 }

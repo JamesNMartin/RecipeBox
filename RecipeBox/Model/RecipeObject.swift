@@ -7,6 +7,10 @@
 
 import Foundation
 import RealmSwift
+import SwiftUI
+
+// Getting started in Realm: https://blog.logrocket.com/getting-started-with-realmswift/
+// Loading Image to Realm: https://www.educative.io/edpresso/how-to-upload-images-to-mongodb-realm-using-swiftui
 
 class RecipeObject: Object {
     @Persisted (primaryKey: true) var id: ObjectId
@@ -19,4 +23,5 @@ class RecipeObject: Object {
     @Persisted var isVegan: Bool
     @Persisted var url: String
     @Persisted var imageName: String
+    @Persisted var image: Data
 }
