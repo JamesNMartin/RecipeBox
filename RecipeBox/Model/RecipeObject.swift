@@ -21,6 +21,8 @@ class RecipeObject: Object {
     @Persisted var dateMade: Date
     @Persisted var cookTime: String
     @Persisted var isVegan: Bool
+	@Persisted var isVegetarian: Bool
+	@Persisted var cuisine: String
     @Persisted var url: String
     @Persisted var imageName: String
     @Persisted var image: Data

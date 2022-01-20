@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Recipe: Identifiable {
+class Recipe: Identifiable, ObservableObject, Codable {
     var id: String
     var name: String
     var notes: String
@@ -17,12 +17,12 @@ struct Recipe: Identifiable {
     var dateMade: Date
     var cookTime: String
     var isVegan: Bool
+	var isVegetarian: Bool
+	var cuisine: String
     var url: String
     //var imageName: String
     var image: Data
-    
-    
-    
+
     init(RecipeObject: RecipeObject) {
         self.id = RecipeObject.id.stringValue
         self.name = RecipeObject.name
@@ -32,6 +32,8 @@ struct Recipe: Identifiable {
         self.dateMade = RecipeObject.dateMade
         self.cookTime = RecipeObject.cookTime
         self.isVegan = RecipeObject.isVegan
+		self.isVegetarian = RecipeObject.isVegetarian
+		self.cuisine = RecipeObject.cuisine
         self.url = RecipeObject.url
         //self.imageName = RecipeObject.imageName
         self.image = RecipeObject.image

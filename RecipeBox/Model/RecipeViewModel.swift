@@ -36,7 +36,7 @@ final class RecipeViewModel: ObservableObject {
             print(error.localizedDescription)
         }
     }
-    func addRecipe (name: String, notes: String, isFavorite: Bool, difficulty: String, dateMade: Date, cookTime: String, isVegan: Bool, url: String, image: Data) {
+	func addRecipe (name: String, notes: String, isFavorite: Bool, difficulty: String, dateMade: Date, cookTime: String, isVegan: Bool, isVegetarian: Bool, cuisine: String, url: String, image: Data) {
         
         let recipeObject = RecipeObject(value: [
             "name": name,
@@ -46,6 +46,8 @@ final class RecipeViewModel: ObservableObject {
             "dateMade": dateMade,
             "cookTime": cookTime,
             "isVegan": isVegan,
+			"isVegetarian": isVegetarian,
+			"cuisine": cuisine,
             "url": url,
             //"imageName": imageName
             "image": image

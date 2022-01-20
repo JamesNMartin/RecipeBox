@@ -18,7 +18,8 @@
 		AC805FCD2788F92800CA1174 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FCC2788F92800CA1174 /* ImagePickerView.swift */; };
 		AC805FCF278B9BFF00CA1174 /* ImageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FCE278B9BFF00CA1174 /* ImageCompressor.swift */; };
 		AC805FD1278BB73F00CA1174 /* RecipeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FD0278BB73F00CA1174 /* RecipeImage.swift */; };
-		AC805FD6278FDD6000CA1174 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = AC805FD5278FDD6000CA1174 /* Nuke */; };
+		AC805FDB278FE75500CA1174 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = AC805FDA278FE75500CA1174 /* NukeUI */; };
+		AC805FDE278FE77700CA1174 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = AC805FDD278FE77700CA1174 /* Nuke */; };
 		ACB9C874277F7CB500097903 /* RecipeBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C873277F7CB500097903 /* RecipeBoxApp.swift */; };
 		ACB9C876277F7CB500097903 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C875277F7CB500097903 /* ContentView.swift */; };
 		ACB9C878277F7CB600097903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB9C877277F7CB600097903 /* Assets.xcassets */; };
@@ -76,9 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC805FD6278FDD6000CA1174 /* Nuke in Frameworks */,
+				AC805FDB278FE75500CA1174 /* NukeUI in Frameworks */,
 				AC805FC72787E46500CA1174 /* RealmSwift in Frameworks */,
 				AC805FC52787E46500CA1174 /* Realm in Frameworks */,
+				AC805FDE278FE77700CA1174 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +227,8 @@
 			packageProductDependencies = (
 				AC805FC42787E46500CA1174 /* Realm */,
 				AC805FC62787E46500CA1174 /* RealmSwift */,
-				AC805FD5278FDD6000CA1174 /* Nuke */,
+				AC805FDA278FE75500CA1174 /* NukeUI */,
+				AC805FDD278FE77700CA1174 /* Nuke */,
 			);
 			productName = RecipeBox;
 			productReference = ACB9C870277F7CB500097903 /* RecipeBox.app */;
@@ -301,7 +304,8 @@
 			mainGroup = ACB9C867277F7CB500097903;
 			packageReferences = (
 				AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				AC805FD4278FDD5F00CA1174 /* XCRemoteSwiftPackageReference "Nuke" */,
+				AC805FD9278FE75500CA1174 /* XCRemoteSwiftPackageReference "NukeUI" */,
+				AC805FDC278FE77700CA1174 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = ACB9C871277F7CB500097903 /* Products */;
 			projectDirPath = "";
@@ -526,7 +530,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,7 +560,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -696,12 +700,20 @@
 				minimumVersion = 10.19.0;
 			};
 		};
-		AC805FD4278FDD5F00CA1174 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+		AC805FD9278FE75500CA1174 /* XCRemoteSwiftPackageReference "NukeUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/NukeUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		AC805FDC278FE77700CA1174 /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -717,9 +729,14 @@
 			package = AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
-		AC805FD5278FDD6000CA1174 /* Nuke */ = {
+		AC805FDA278FE75500CA1174 /* NukeUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AC805FD4278FDD5F00CA1174 /* XCRemoteSwiftPackageReference "Nuke" */;
+			package = AC805FD9278FE75500CA1174 /* XCRemoteSwiftPackageReference "NukeUI" */;
+			productName = NukeUI;
+		};
+		AC805FDD278FE77700CA1174 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC805FDC278FE77700CA1174 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
