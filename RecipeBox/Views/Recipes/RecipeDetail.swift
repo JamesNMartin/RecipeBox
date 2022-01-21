@@ -46,7 +46,8 @@ struct RecipeDetail: View {
 			VStack(alignment: .leading) {
 				HStack {
 					Text(recipe.name)
-						.font(.title)
+						.font(.system(.title, design: .rounded).bold())
+						//.font(.title).bold()
 					//.foregroundColor(Color.init(UIColor(red: 0.14, green: 0.13, blue: 0.22, alpha: 1.00)))
 					if recipe.isVegan {
 						Image(systemName: "leaf.fill")
@@ -98,7 +99,7 @@ struct RecipeDetail: View {
 				.foregroundColor(.secondary)
 				Divider()
 				Text("Notes:")
-					.font(.title2)
+					.font(.system(.title2, design: .rounded).bold())
 				//.padding(.bottom)
 				Text(recipe.notes)
 				//.font(.headline)

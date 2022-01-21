@@ -22,6 +22,7 @@ struct RecipeList: View {
 			(!showFavoritesOnly || recipe.isFavorite)
 		}
 	}
+	
 	var body: some View {
 		NavigationView {
 			List {
@@ -43,21 +44,40 @@ struct RecipeList: View {
 			}
 			.navigationTitle("Dinner List")
 			.listStyle(.plain)
-			.navigationBarItems(trailing: Button(action: {
-				//showingSheet.toggle()
-				showingSheet = true
-			}) {
-				Image(systemName: "plus").imageScale(.large)
-			})
-			.navigationBarItems(leading: Button(action: {
-//				let realm = try! Realm()
-//				try! realm.write {
-//					realm.deleteAll()
-//				}
-				//showingSheet.toggle()
-			}) {
-				Image(systemName: "gearshape").imageScale(.large)
-			})
+//			.navigationBarItems(trailing: Button(action: {
+//				//showingSheet.toggle()
+//				//showingSheet = true
+//			}) {
+//				Image(systemName: "plus").imageScale(.large)
+//			})
+//			.navigationBarItems(leading: Button(action: {
+////				let realm = try! Realm()
+////				try! realm.write {
+////					realm.deleteAll()
+////				}
+//				//showingSheet.toggle()
+//			}) {
+//				Image(systemName: "gearshape").imageScale(.large)
+//			})
+			.toolbar {
+				ToolbarItemGroup(placement: .bottomBar) {
+					Button("\(Image(systemName: "plus.circle.fill")) New Meal") {
+						showingSheet.toggle()
+					}
+					.font(.system(.body, design: .rounded).bold())
+					Spacer()
+				}
+				ToolbarItemGroup(placement: .navigationBarLeading) {
+					Button("\(Image(systemName: "gearshape"))") {
+						// DO SOMETHING
+					}
+				}
+				ToolbarItemGroup(placement: .navigationBarTrailing) {
+					Button("Edit") {
+						// DO EDIT
+					}
+				}
+			}
 		}
 		.searchable(text: $queryString)
 		.sheet(isPresented: $showingSheet) {

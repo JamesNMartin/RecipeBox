@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct LandmarksApp: App {
+struct RecipeBoxApp: App {
     @StateObject private var modelData = RecipeViewModel()
 
     var body: some Scene {

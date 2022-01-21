@@ -131,7 +131,7 @@ struct AddRecipe: View {
 				Section(header: Text("Recipe site (Optional)"), footer: Text("You can optionally add the site you found the recipe on. If it's a recipe you created then you can leave this blank")) {
 					HStack {
 						TextField("URL", text: $url)
-						Image(systemName: "exclamationmark.triangle.fill")
+						//Image(systemName: "exclamationmark.triangle.fill")
 							.foregroundColor(.red)
 					}
 					Button("Open site to copy ingredients") {
@@ -179,6 +179,7 @@ struct AddRecipe: View {
 				ToolbarItemGroup(placement: .navigationBarTrailing) {
 					Button(action: {
 						handleSubmit()
+						
 					}, label: {
 						Text("Save")
 						//Image(systemName: "line.3.horizontal.decrease.circle")
