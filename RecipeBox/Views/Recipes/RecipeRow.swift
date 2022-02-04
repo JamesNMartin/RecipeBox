@@ -15,7 +15,7 @@ struct RecipeRow: View {
 			Image(uiImage: UIImage(data: recipe.image as Data)!)
 				.resizable()
 				.aspectRatio(contentMode: .fill)
-				.frame(width: 50, height: 50)
+				.frame(width: 60, height: 60)
 			//.clipShape(Circle())
 				.cornerRadius(10)
 				.clipped()
@@ -34,24 +34,21 @@ struct RecipeRow: View {
 						Text("Vegan \(Image(systemName: "leaf.fill"))")
 							.modifier(VegLabelStyle())
 							.font(.system(size: 12))
-						//.foregroundColor(.green)
 					}
 					if recipe.isVegetarian {
 						Text("Vegetarian \(Image(systemName: "leaf"))")
 							.modifier(VegLabelStyle())
 							.font(.system(size: 12))
-						//.foregroundColor(.green)
 					}
 					Text("\(recipe.cuisine) \(Image(systemName: "globe.americas"))")
 						.modifier(CuisineLabelStyle())
 						.font(.system(size: 12))
-					//.foregroundColor(.red)
 				}
 			}
 			Spacer()
 			if recipe.isFavorite {
-				Image(systemName: "star.fill")
-					.foregroundColor(.yellow)
+				Image(systemName: "heart.fill")
+					.foregroundColor(.red)
 			}
 		}
 	}
@@ -70,7 +67,8 @@ struct VegLabelStyle: ViewModifier {
 			.foregroundColor(Color(.systemBackground))
 			.padding(.horizontal, 5.0)
 			.padding(.vertical, 2.0)
-			.background(.green)
+			//.background(Color.init(UIColor(named: "Michaelas-Color-1")!))
+			.background(.gray)
 			.clipShape(Capsule())
 	}
 }
@@ -82,8 +80,8 @@ struct CuisineLabelStyle: ViewModifier {
 			.foregroundColor(Color(.systemBackground))
 			.padding(.horizontal, 5.0)
 			.padding(.vertical, 2.0)
-			.background(.yellow)
-		//.background(Color.init(UIColor(red: 0.55, green: 0.53, blue: 0.79, alpha: 1.00)))
+			//.background(Color.init(UIColor(named: "Michaelas-Color-2")!))
+			.background(.gray)
 			.clipShape(Capsule())
 	}
 }
@@ -94,7 +92,6 @@ struct LandmarkRow_Previews: PreviewProvider {
 	static var previews: some View {
 		Group {
 			RecipeRow(recipe: recipes[0])
-			
 			//RecipeRow(recipe: recipes[3])
 		}
 		.previewLayout(.fixed(width: 400, height: 70))

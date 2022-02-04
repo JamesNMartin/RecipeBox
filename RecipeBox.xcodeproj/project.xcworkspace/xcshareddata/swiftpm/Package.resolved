@@ -2,48 +2,21 @@
   "object": {
     "pins": [
       {
-        "package": "Gifu",
-        "repositoryURL": "https://github.com/kaishin/Gifu",
-        "state": {
-          "branch": null,
-          "revision": "51f2eab32903e336f590c013267cfa4d7f8b06c4",
-          "version": "3.3.1"
-        }
-      },
-      {
-        "package": "Nuke",
-        "repositoryURL": "https://github.com/kean/Nuke.git",
-        "state": {
-          "branch": "master",
-          "revision": "8376b91bce2c05571895658465d89b54e80ea90c",
-          "version": null
-        }
-      },
-      {
-        "package": "NukeUI",
-        "repositoryURL": "https://github.com/kean/NukeUI",
-        "state": {
-          "branch": "main",
-          "revision": "593ad30b9098b1227353bdc878221df78b025dd1",
-          "version": null
-        }
-      },
-      {
         "package": "RealmDatabase",
         "repositoryURL": "https://github.com/realm/realm-core",
         "state": {
           "branch": null,
-          "revision": "c3c11a841642ac93c27bd1edd61f989fc0bfb809",
-          "version": "11.6.1"
+          "revision": "6b81f1a7a2d421f9e0b9e7f04e76bcf736a54409",
+          "version": "11.9.0"
         }
       },
       {
         "package": "Realm",
         "repositoryURL": "https://github.com/realm/realm-swift.git",
         "state": {
-          "branch": null,
-          "revision": "e83cc9f28e8bccd477b6b81cee521c02239d2773",
-          "version": "10.20.2"
+          "branch": "master",
+          "revision": "1c92fc222cd27e767b2a7f99ed786b58b5636f65",
+          "version": null
         }
       }
     ]

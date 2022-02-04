@@ -8,18 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		AC08EF45279A4A85007E977A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08EF44279A4A85007E977A /* SettingsView.swift */; };
+		AC206CF027A0B40F00A0B42A /* DetailCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC206CEF27A0B40F00A0B42A /* DetailCube.swift */; };
 		AC2619EC277FF42C00EB1954 /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2619EB277FF42C00EB1954 /* RecipeDetail.swift */; };
 		AC2619EE277FFBA200EB1954 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2619ED277FFBA200EB1954 /* FavoriteButton.swift */; };
 		AC2619F2277FFE1800EB1954 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2619F1277FFE1800EB1954 /* RecipeList.swift */; };
 		AC480444278029E100D667AD /* AddRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC480443278029E100D667AD /* AddRecipe.swift */; };
-		AC805FC52787E46500CA1174 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AC805FC42787E46500CA1174 /* Realm */; };
-		AC805FC72787E46500CA1174 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AC805FC62787E46500CA1174 /* RealmSwift */; };
 		AC805FC92788D1BD00CA1174 /* RecipeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FC82788D1BD00CA1174 /* RecipeObject.swift */; };
 		AC805FCB2788DACA00CA1174 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FCA2788DACA00CA1174 /* RecipeViewModel.swift */; };
 		AC805FCD2788F92800CA1174 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FCC2788F92800CA1174 /* ImagePickerView.swift */; };
 		AC805FD1278BB73F00CA1174 /* RecipeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC805FD0278BB73F00CA1174 /* RecipeImage.swift */; };
-		AC805FDB278FE75500CA1174 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = AC805FDA278FE75500CA1174 /* NukeUI */; };
-		AC805FDE278FE77700CA1174 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = AC805FDD278FE77700CA1174 /* Nuke */; };
 		ACB9C874277F7CB500097903 /* RecipeBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C873277F7CB500097903 /* RecipeBoxApp.swift */; };
 		ACB9C876277F7CB500097903 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C875277F7CB500097903 /* ContentView.swift */; };
 		ACB9C878277F7CB600097903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB9C877277F7CB600097903 /* Assets.xcassets */; };
@@ -29,6 +26,10 @@
 		ACB9C891277F7CB600097903 /* RecipeBoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C890277F7CB600097903 /* RecipeBoxUITestsLaunchTests.swift */; };
 		ACB9C89F277F7DDF00097903 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C89E277F7DDF00097903 /* Recipe.swift */; };
 		ACB9C8A6277FDBB100097903 /* RecipeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9C8A5277FDBB100097903 /* RecipeRow.swift */; };
+		ACD0472B27A8EF01006C757A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = ACD0472A27A8EF01006C757A /* Realm */; };
+		ACD0472D27A8EF01006C757A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ACD0472C27A8EF01006C757A /* RealmSwift */; };
+		ACD0472F27AAF794006C757A /* FloatingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0472E27AAF794006C757A /* FloatingMenu.swift */; };
+		ACD0473527AB790E006C757A /* ModifyRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0473427AB790E006C757A /* ModifyRecipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		AC08EF44279A4A85007E977A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AC206CEF27A0B40F00A0B42A /* DetailCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailCube.swift; path = RecipeBox/Views/Recipes/DetailCube.swift; sourceTree = SOURCE_ROOT; };
 		AC2619EB277FF42C00EB1954 /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
 		AC2619ED277FFBA200EB1954 /* FavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		AC2619F1277FFE1800EB1954 /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
@@ -70,6 +72,8 @@
 		ACB9C890277F7CB600097903 /* RecipeBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ACB9C89E277F7DDF00097903 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		ACB9C8A5277FDBB100097903 /* RecipeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRow.swift; sourceTree = "<group>"; };
+		ACD0472E27AAF794006C757A /* FloatingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenu.swift; sourceTree = "<group>"; };
+		ACD0473427AB790E006C757A /* ModifyRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyRecipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC805FDB278FE75500CA1174 /* NukeUI in Frameworks */,
-				AC805FC72787E46500CA1174 /* RealmSwift in Frameworks */,
-				AC805FC52787E46500CA1174 /* Realm in Frameworks */,
-				AC805FDE278FE77700CA1174 /* Nuke in Frameworks */,
+				ACD0472D27A8EF01006C757A /* RealmSwift in Frameworks */,
+				ACD0472B27A8EF01006C757A /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,10 +175,10 @@
 			isa = PBXGroup;
 			children = (
 				ACB9C875277F7CB500097903 /* ContentView.swift */,
+				AC08EF44279A4A85007E977A /* SettingsView.swift */,
 				AC805FCC2788F92800CA1174 /* ImagePickerView.swift */,
 				ACB9C8A4277FDB9700097903 /* Recipes */,
 				ACB9C8A3277FD90600097903 /* Helpers */,
-				AC08EF44279A4A85007E977A /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +186,8 @@
 		ACB9C8A3277FD90600097903 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				ACD0472E27AAF794006C757A /* FloatingMenu.swift */,
+				AC206CEF27A0B40F00A0B42A /* DetailCube.swift */,
 				AC805FD0278BB73F00CA1174 /* RecipeImage.swift */,
 				AC2619ED277FFBA200EB1954 /* FavoriteButton.swift */,
 			);
@@ -197,6 +201,7 @@
 				AC2619EB277FF42C00EB1954 /* RecipeDetail.swift */,
 				AC2619F1277FFE1800EB1954 /* RecipeList.swift */,
 				AC480443278029E100D667AD /* AddRecipe.swift */,
+				ACD0473427AB790E006C757A /* ModifyRecipe.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -225,10 +230,8 @@
 			);
 			name = RecipeBox;
 			packageProductDependencies = (
-				AC805FC42787E46500CA1174 /* Realm */,
-				AC805FC62787E46500CA1174 /* RealmSwift */,
-				AC805FDA278FE75500CA1174 /* NukeUI */,
-				AC805FDD278FE77700CA1174 /* Nuke */,
+				ACD0472A27A8EF01006C757A /* Realm */,
+				ACD0472C27A8EF01006C757A /* RealmSwift */,
 			);
 			productName = RecipeBox;
 			productReference = ACB9C870277F7CB500097903 /* RecipeBox.app */;
@@ -303,9 +306,7 @@
 			);
 			mainGroup = ACB9C867277F7CB500097903;
 			packageReferences = (
-				AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				AC805FD9278FE75500CA1174 /* XCRemoteSwiftPackageReference "NukeUI" */,
-				AC805FDC278FE77700CA1174 /* XCRemoteSwiftPackageReference "Nuke" */,
+				ACD0472927A8EF01006C757A /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = ACB9C871277F7CB500097903 /* Products */;
 			projectDirPath = "";
@@ -358,8 +359,11 @@
 				AC2619EE277FFBA200EB1954 /* FavoriteButton.swift in Sources */,
 				ACB9C874277F7CB500097903 /* RecipeBoxApp.swift in Sources */,
 				ACB9C8A6277FDBB100097903 /* RecipeRow.swift in Sources */,
+				AC206CF027A0B40F00A0B42A /* DetailCube.swift in Sources */,
+				ACD0472F27AAF794006C757A /* FloatingMenu.swift in Sources */,
 				AC805FCB2788DACA00CA1174 /* RecipeViewModel.swift in Sources */,
 				AC805FC92788D1BD00CA1174 /* RecipeObject.swift in Sources */,
+				ACD0473527AB790E006C757A /* ModifyRecipe.swift in Sources */,
 				AC2619F2277FFE1800EB1954 /* RecipeList.swift in Sources */,
 				AC08EF45279A4A85007E977A /* SettingsView.swift in Sources */,
 			);
@@ -692,25 +696,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		ACD0472927A8EF01006C757A /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.19.0;
-			};
-		};
-		AC805FD9278FE75500CA1174 /* XCRemoteSwiftPackageReference "NukeUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kean/NukeUI";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		AC805FDC278FE77700CA1174 /* XCRemoteSwiftPackageReference "Nuke" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -719,25 +707,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AC805FC42787E46500CA1174 /* Realm */ = {
+		ACD0472A27A8EF01006C757A /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = ACD0472927A8EF01006C757A /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		AC805FC62787E46500CA1174 /* RealmSwift */ = {
+		ACD0472C27A8EF01006C757A /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AC805FC32787E46500CA1174 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = ACD0472927A8EF01006C757A /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		AC805FDA278FE75500CA1174 /* NukeUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AC805FD9278FE75500CA1174 /* XCRemoteSwiftPackageReference "NukeUI" */;
-			productName = NukeUI;
-		};
-		AC805FDD278FE77700CA1174 /* Nuke */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AC805FDC278FE77700CA1174 /* XCRemoteSwiftPackageReference "Nuke" */;
-			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
