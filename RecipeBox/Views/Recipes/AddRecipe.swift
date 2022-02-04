@@ -16,19 +16,20 @@ struct AddRecipe: View {
 	@State private var name: String = ""
 	@State private var cookTime: String = ""
 	@State private var descriptionText: String = ""
-	@State var ingredientsText: String = "" // BULLET UNICODE \u{2022}
+	//@State private var ingredients: String = ""
+	@State var ingredientsText: String = "\u{2022} " // BULLET UNICODE \u{2022}
 	@State private var url: String = ""
 	@State private var hour: String = ""
-	@State private var pMode: String = ""
 	@State private var minute: String = ""
 	@State private var cuisine: String = "American"
+	@State private var servingSize: Int = 1
 	@State private var isVegan: Bool = false
 	@State private var isVegetarian: Bool = false
 	@State private var date = Date()
+	@State private var numberOfTimesMade: Int = 0
 	@State private var difficulty: String = "Low"
 	@State private var showingDetail = false
 	@State private var showingWebView = false
-	@State private var allowSaving = false
 	@State private var selectedMinutes = "0 Minutes"
 	//@FocusState private var focusedField: Field?
 	private var minutes = ["0 Minutes", "15 Minutes", "30 Minutes", "45 Minutes"]
@@ -67,7 +68,7 @@ struct AddRecipe: View {
 								.frame(width: 75, height: 75)
 						}
 						Spacer()
-						Button("\(Image(systemName: "camera.fill"))") {
+						Button("\(Image(systemName: "photo.on.rectangle"))") {
 							self.sourceType = .photoLibrary
 							self.isImagePickerDisplay.toggle()
 							
@@ -76,8 +77,6 @@ struct AddRecipe: View {
 						.font(.system(size: 24))
 					}
 				}
-				//TextField("Name", text: $name)
-				//TextField("Cook time", text: $cookTime)
 				Section(header: Text("Cook time"), footer: Text("You can use this as cook time or prep time.")) {
 					HStack {
 						Text("Hour(s)")
@@ -100,14 +99,14 @@ struct AddRecipe: View {
 						.pickerStyle(.menu)
 					}
 				}
-				Section(header: Text("Cuisine Type")) {
+				Section(header: Text("Cuisine and Serving Size")) {
 					Picker ("Cuisine", selection: $cuisine) {
 						ForEach(cuisines, id: \.self) {
 							Text($0)
 						}
 					}
+					Stepper("Serving Size: \(servingSize)", value: $servingSize, in: 1...24)
 				}
-				
 				Section(header: Text("Tags"), footer: Text("Using tags will help when searching for recipes")) {
 					Toggle(isOn: $isVegan) {
 						Text("Vegan")
@@ -132,9 +131,9 @@ struct AddRecipe: View {
 					HStack {
 						TextField("URL", text: $url)
 						//Image(systemName: "exclamationmark.triangle.fill")
-							.foregroundColor(.red)
 					}
 					Button("Open site to copy ingredients") {
+						// MAKE SURE URL IS VALID BEFORE ENABLING BUTTON
 						showingWebView.toggle()
 					}
 					.sheet(isPresented: $showingWebView) {
@@ -153,7 +152,7 @@ struct AddRecipe: View {
 					TextEditor(text: $descriptionText)
 				}
 			}
-			.navigationTitle("Add Meal")
+			.navigationTitle("Add Recipe")
 			.sheet(isPresented: self.$isImagePickerDisplay) {
 				ImagePickerView(selectedImage: self.$selectedImage, sourceType: self.sourceType)
 			}
@@ -213,10 +212,10 @@ struct AddRecipe: View {
 		// MIGHT USE MARKDOWN FOR DESCRIPTION AND NOTES
 		//var markdownText: AttributedString = try! AttributedString(markdown: descriptionText)
 		
-		realmData.addRecipe(name: $name.wrappedValue, notes: $descriptionText.wrappedValue, isFavorite: false,
-							difficulty: $difficulty.wrappedValue, dateMade: date,
+		realmData.addRecipe(name: $name.wrappedValue, notes: $descriptionText.wrappedValue, ingredients: $ingredientsText.wrappedValue, isFavorite: false,
+							difficulty: $difficulty.wrappedValue, servingSize: servingSize, dateMade: date,
 							cookTime: formattedCookTime,
-							isVegan: isVegan, isVegetarian: isVegetarian, cuisine: $cuisine.wrappedValue, url: $url.wrappedValue, image: imageData)
+							isVegan: isVegan, isVegetarian: isVegetarian, cuisine: $cuisine.wrappedValue, numberOfTimesMade: 0, url: $url.wrappedValue, image: imageData)
 		presentationMode.wrappedValue.dismiss()
 	}
 }

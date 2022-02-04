@@ -17,11 +17,11 @@ struct RecipeList: View {
 	@State private var filterBy  = ""
 	@State private var queryString: String = ""
 	
-	var filteredRecipes: [Recipe] {
-		modelData.recipes.filter { recipe in
-			(!showFavoritesOnly || recipe.isFavorite)
-		}
-	}
+//	var filteredRecipes: [Recipe] {
+//		modelData.recipes.filter { recipe in
+//			(!showFavoritesOnly || recipe.isFavorite)
+//		}
+//	}
 	
 	var body: some View {
 		NavigationView {
@@ -32,36 +32,28 @@ struct RecipeList: View {
 				//                //.listStyle(.plain)
 				//                .tint(Color.accentColor)
 				//
-				ForEach(filteredRecipes) { recipe in
-					NavigationLink {
-						RecipeDetail(recipe: recipe)
-					} label: {
+//				ForEach(filteredRecipes) { recipe in
+//					NavigationLink {
+//						RecipeDetail(recipe: recipe)
+//					} label: {
+//						RecipeRow(recipe: recipe)
+//						//.listRowSeparatorTint(Color.init(UIColor(red: 0.79, green: 0.77, blue: 0.81, alpha: 1.00)))
+//
+//					}
+//				}
+				ForEach(modelData.recipes, id: \.id) { recipe in
+					NavigationLink(destination: RecipeDetail(recipe: recipe)) {
 						RecipeRow(recipe: recipe)
-						//.listRowSeparatorTint(Color.init(UIColor(red: 0.79, green: 0.77, blue: 0.81, alpha: 1.00)))
-						
 					}
+					
 				}
+				//.onDelete(perform: )
 			}
-			.navigationTitle("Dinner List")
+			.navigationTitle("Recipe List")
 			.listStyle(.plain)
-//			.navigationBarItems(trailing: Button(action: {
-//				//showingSheet.toggle()
-//				//showingSheet = true
-//			}) {
-//				Image(systemName: "plus").imageScale(.large)
-//			})
-//			.navigationBarItems(leading: Button(action: {
-////				let realm = try! Realm()
-////				try! realm.write {
-////					realm.deleteAll()
-////				}
-//				//showingSheet.toggle()
-//			}) {
-//				Image(systemName: "gearshape").imageScale(.large)
-//			})
 			.toolbar {
 				ToolbarItemGroup(placement: .bottomBar) {
-					Button("\(Image(systemName: "plus.circle.fill")) New Meal") {
+					Button("\(Image(systemName: "plus.circle.fill")) Add Recipe") {
 						showingSheet.toggle()
 					}
 					.font(.system(.body, design: .rounded).bold())
@@ -73,12 +65,11 @@ struct RecipeList: View {
 					}
 				}
 				ToolbarItemGroup(placement: .navigationBarTrailing) {
-					Button("Edit") {
-						// DO EDIT
-					}
+					EditButton()
 				}
 			}
 		}
+		
 		.searchable(text: $queryString)
 		.sheet(isPresented: $showingSheet) {
 			AddRecipe()

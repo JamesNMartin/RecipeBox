@@ -16,13 +16,16 @@ class RecipeObject: Object {
     @Persisted (primaryKey: true) var id: ObjectId
     @Persisted var name: String
     @Persisted var notes: String
+	@Persisted var ingredients: String
     @Persisted var isFavorite: Bool
     @Persisted var difficulty: String
+	@Persisted var servingSize: Int
     @Persisted var dateMade: Date
     @Persisted var cookTime: String
     @Persisted var isVegan: Bool
 	@Persisted var isVegetarian: Bool
 	@Persisted var cuisine: String
+	@Persisted var numberOfTimesMade: Int
     @Persisted var url: String
     @Persisted var imageName: String
     @Persisted var image: Data
