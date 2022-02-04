@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/kean/Nuke.git",
         "state": {
           "branch": "master",
-          "revision": "8376b91bce2c05571895658465d89b54e80ea90c",
+          "revision": "04953e2cde7022574fda9e91d7cbe9232259bc15",
           "version": null
         }
       },
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/kean/NukeUI",
         "state": {
           "branch": "main",
-          "revision": "593ad30b9098b1227353bdc878221df78b025dd1",
+          "revision": "a047a62d558f928bfda4b7b9d4c2cd2dc86c7d66",
           "version": null
         }
       },
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/realm/realm-core",
         "state": {
           "branch": null,
-          "revision": "c3c11a841642ac93c27bd1edd61f989fc0bfb809",
-          "version": "11.6.1"
+          "revision": "6b81f1a7a2d421f9e0b9e7f04e76bcf736a54409",
+          "version": "11.9.0"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/realm/realm-swift.git",
         "state": {
           "branch": null,
-          "revision": "e83cc9f28e8bccd477b6b81cee521c02239d2773",
-          "version": "10.20.2"
+          "revision": "9dff9f2862240d521ad6ad599541269177ddb993",
+          "version": "10.22.0"
         }
       }
     ]
